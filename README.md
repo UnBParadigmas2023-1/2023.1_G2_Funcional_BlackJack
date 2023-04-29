@@ -9,6 +9,7 @@
 | -- | -- |
 | 19/0016663  |  Lucas Pimentel Quintão |
 | 18/0108344  |  Rafael Berto Pereira |
+| 20/0017519  |  Eurico Menezes de Abreu Neto |
 
 ## Sobre 
 O tema do projeto é um jogo de cartas, Black Jack. 
