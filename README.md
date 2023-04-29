@@ -1,23 +1,23 @@
 # BlackJack
 
 **Disciplina**: FGA0210 - PARADIGMAS DE PROGRAMAÇÃO - TA <br>
-**Nro do Grupo**: XX<br>
-**Paradigma**: XXXXXXXXXX<br>
+**Nro do Grupo**: 2<br>
+**Paradigma**: Funcional<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
 | 19/0016663  |  Lucas Pimentel Quintão |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 18/0108344  |  Rafael Berto Pereira |
 
 ## Sobre 
-Descreva o seu projeto em linhas gerais. 
+O tema do projeto é um jogo de cartas, Black Jack. 
 
 ## Screenshots
 Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
 
 ## Instalação 
-**Linguagens**: xxxxxx<br>
+**Linguagens**: Haskell<br>
 **Tecnologias**: xxxxxx<br>
 Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 Insira um manual ou um script para auxiliar ainda mais.
