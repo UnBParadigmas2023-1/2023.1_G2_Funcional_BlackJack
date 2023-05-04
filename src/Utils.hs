@@ -1,6 +1,7 @@
 module Utils where
 
 import Data.Char
+import Data.List
 
 --- Soma valor das cartas do deck
 --- hand -> Cartas sem contar a primeira
@@ -71,3 +72,8 @@ getHandValue (h : t)
   | otherwise = digitToInt cardValue + getHandValue t
   where
     cardValue = snd h
+
+verifySplitPossibility :: [([Char], Char)] -> Bool
+verifySplitPossibility playerHand = length (nub values) < length playerHand
+  where
+    values = map snd playerHand

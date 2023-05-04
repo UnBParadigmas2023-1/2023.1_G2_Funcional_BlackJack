@@ -30,6 +30,8 @@ startGameMenu money = do
 
   option <- getLine
   deckShuffled <- shuffle deck
+  let playerFirstCard = head deckShuffled
+  let playerSecondCard = [deckShuffled !! 1]
   let playerHand = head deckShuffled : [deckShuffled !! 1]
   let dealerHand = [deckShuffled !! 2]
   let _deckShuffled = drop 3 deckShuffled
@@ -88,6 +90,11 @@ inGameMenu :: Int -> Int -> [([Char], Char)] -> [([Char], Char)] -> [([Char], Ch
 -- na função startGameMenu
 inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dealerHandValue
   | playerHandValue > 21 = endsGame bet totalMoney playerHand deckShuffled dealerHand playerHandValue dealerHandValue
+  | length playerHand == 2 && verifySplitPossibility && playerWantsSplit = do
+    putStrLn "Você recebeu cartas iguais! Deseja dobrar a aposta e jogar duas mãos simultaneamente? (s/n)"
+    let playerHand1 = head playerHand
+    let playerHand2 = tail playerHand
+  | length playerHand == 1  
   | otherwise = do
     putStrLn $ "\nSua mão:\n" ++ printHand playerHand
     putStrLn $ "Valor da sua mão: " ++ show playerHandValue
