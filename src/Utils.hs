@@ -46,3 +46,8 @@ compareHandValues handOne handTwo
     where 
         handOneValue = sumCards handOne
         handTwoValue = sumCards handTwo
+
+-- Verifica se, no array de cartas do usuário, possui 2 cartas com o mesmo valor
+hasEqualValues :: [(CardValue, Suit)] -> Bool
+hasEqualValues hand = length (nub values) < length hand
+  where values = map fst hand
