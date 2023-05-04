@@ -91,9 +91,12 @@ inGameMenu :: Int -> Int -> [([Char], Char)] -> [([Char], Char)] -> [([Char], Ch
 inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dealerHandValue
   | playerHandValue > 21 = endsGame bet totalMoney playerHand deckShuffled dealerHand playerHandValue dealerHandValue
   | length playerHand == 2 && verifySplitPossibility && playerWantsSplit = do
+    putStrLn $ "\nSua mão:\n" ++ printHand playerHand
     putStrLn "Você recebeu cartas iguais! Deseja dobrar a aposta e jogar duas mãos simultaneamente? (s/n)"
+    
     let playerHand1 = head playerHand
     let playerHand2 = tail playerHand
+
   | length playerHand == 1  
   | otherwise = do
     putStrLn $ "\nSua mão:\n" ++ printHand playerHand
