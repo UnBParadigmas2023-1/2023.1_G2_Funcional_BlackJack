@@ -92,6 +92,13 @@ inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dea
     putStrLn $ "\nSua mão:\n" ++ printHand playerHand
     putStrLn $ "Valor da sua mão: " ++ show playerHandValue
     putStrLn $ "\nMão do dealer:\n" ++ printHand dealerHand
+    putStrLn ".------.\n\
+            \|      |\n\
+            \|      |\n\
+            \|      |\n\
+            \|      |\n\
+            \`------'\n"
+
     putStrLn $ "Valor da mão do dealer: " ++ show dealerHandValue
 
     -- inserir aqui função para printar carta do dealer virada.
