@@ -60,16 +60,17 @@ buyDealerCards dealerHand deckShuffled dealerhandValue
   | isOverOrEqual17 dealerhandValue = dealerHand
   | otherwise = do
     let new_dealerHand = head deckShuffled : dealerHand
-    let new_dealerHandValue = getHandValue new_dealerHand
+    let new_dealerHandValue = getHandValue new_dealerHand 0
     let new_deckShuffled = drop 1 deckShuffled
     buyDealerCards new_dealerHand new_deckShuffled new_dealerHandValue
 
-getHandValue :: [([Char], Char)] -> Int
-getHandValue [] = 0
-getHandValue (h : t)
-  | cardValue == 'J' || cardValue == 'Q' || cardValue == 'K' || cardValue == 'X' = 10 + getHandValue t
-  | cardValue == 'A' = 1 + getHandValue t
-  | otherwise = digitToInt cardValue + getHandValue t
+getHandValue :: [([Char], Char)] -> Int -> Int
+getHandValue [] a = 0
+getHandValue (h : t) currentSum
+  | cardValue == 'J' || cardValue == 'Q' || cardValue == 'K' || cardValue == 'X' = 10 + getHandValue t (currentSum + 10)
+  | cardValue == 'A' && 11 + currentSum + getHandValue t currentSum > 21 = 1 + getHandValue t (currentSum + 1)
+  | cardValue == 'A' && 11 + currentSum + getHandValue t currentSum <= 21 = 11 + getHandValue t (currentSum + 11)
+  | otherwise = digitToInt cardValue + getHandValue t (currentSum + digitToInt cardValue)
   where
     cardValue = snd h
 

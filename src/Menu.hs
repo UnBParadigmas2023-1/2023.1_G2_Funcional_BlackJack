@@ -33,8 +33,8 @@ startGameMenu money = do
   let playerHand = head deckShuffled : [deckShuffled !! 1]
   let dealerHand = [deckShuffled !! 2]
   let _deckShuffled = drop 3 deckShuffled
-  let playerHandValue = getHandValue playerHand
-  let dealerHandValue = getHandValue dealerHand
+  let playerHandValue = getHandValue playerHand 0
+  let dealerHandValue = getHandValue dealerHand 0
   case option of
     "1" -> do
       if isMoneyEnough money 10
@@ -116,7 +116,7 @@ inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dea
               endsGame new_bet totalMoney playerHand deckShuffled dealerHand playerHandValue dealerHandValue
             else do
               let new_playerHand = head deckShuffled : playerHand
-              let new_playerHandValue = getHandValue new_playerHand
+              let new_playerHandValue = getHandValue new_playerHand 0
               let new_deckShuffled = drop 1 deckShuffled
               endsGame new_bet totalMoney new_playerHand new_deckShuffled dealerHand new_playerHandValue dealerHandValue
           else do
@@ -124,7 +124,7 @@ inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dea
             inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dealerHandValue
       "2" -> do
         let new_playerHand = head deckShuffled : playerHand
-        let new_playerHandValue = getHandValue new_playerHand
+        let new_playerHandValue = getHandValue new_playerHand 0
         let new_deckShuffled = drop 1 deckShuffled
         inGameMenu bet totalMoney new_playerHand dealerHand new_deckShuffled new_playerHandValue dealerHandValue
       "3" -> do
@@ -162,7 +162,7 @@ endsGame bet totalMoney playerHand deckShuffled dealerHand playerHandValue deale
     let new_money = totalMoney
     startGameMenu new_money
   | otherwise = do
-    let dealerHandValueBeforeBuy = getHandValue dealerHand
+    let dealerHandValueBeforeBuy = getHandValue dealerHand 0
     let new_dealerHand = buyDealerCards dealerHand deckShuffled dealerHandValueBeforeBuy
-    let dealerHandValueAfterBuy = getHandValue new_dealerHand
+    let dealerHandValueAfterBuy = getHandValue new_dealerHand 0
     endsGame bet totalMoney playerHand deckShuffled new_dealerHand playerHandValue dealerHandValueAfterBuy
