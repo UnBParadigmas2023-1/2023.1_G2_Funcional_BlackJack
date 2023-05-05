@@ -13,6 +13,7 @@
 | 20/0017519 | Eurico Menezes de Abreu Neto |
 | 19/0027088 | Eliás Yousef Santana Ali     |
 | 19/0044403 | Victor Souza Dantas Martins Lima |
+| 19/0033088 | Lucas Braun Vieira Xavier    |
 
 ## Sobre
 
@@ -29,9 +30,34 @@ Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcioname
 ## Instalação
 
 **Linguagens**: Haskell<br>
-**Tecnologias**: xxxxxx<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-Insira um manual ou um script para auxiliar ainda mais.
+**Tecnologias**: Stack<br>
+
+Primeiro é necessário instalar o Haskell, caso ainda não tenha sido feito:
+
+```
+sudo apt-get install haskell-platform
+```
+
+Também é necessário o Haskell Tool Stack (Stack):
+
+```
+sudo apt-get install haskell-stack
+```
+
+Em seguida, instale a biblioteca random, que é uma dependência externa usada no embaralhamento:
+
+```
+stack install random
+```
+
+Agora, para rodar, acesse a pasta src/, carregue o arquivo game.hs pelo ghci, e execute a função *main*:
+
+```
+cd src/
+ghci
+Prelude> :l game.hs
+*Main> main
+```
 
 ## Uso
 
