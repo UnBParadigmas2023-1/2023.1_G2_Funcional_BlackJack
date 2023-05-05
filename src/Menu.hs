@@ -36,8 +36,8 @@ startGameMenu money = do
   -- let playerHand = ("Hearts", '2') : [("Clubs", '2')]
   let dealerHand = [deckShuffled !! 2]
   let _deckShuffled = drop 3 deckShuffled
-  let playerHandValue = getHandValue playerHand
-  let dealerHandValue = getHandValue dealerHand
+  let playerHandValue = getHandValue playerHand 0
+  let dealerHandValue = getHandValue dealerHand 0
   case option of
     "1" -> do
       if isMoneyEnough money 10
@@ -105,18 +105,18 @@ inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dea
         putStrLn "Mão 1:\n"
         let playerHand1 = [head playerHand]
         new_playerHand1 <- handCicle playerHand1 "0" deckShuffled
-        let playerHand1Value = getHandValue new_playerHand1
+        let playerHand1Value = getHandValue new_playerHand1 0
         let playerHand2 = tail playerHand
         let _deckShuffled = drop 5 deckShuffled
         putStrLn "Mão 2:\n"
         new_playerHand2 <- handCicle playerHand2 "0" _deckShuffled
-        let playerHand2Value = getHandValue new_playerHand2
+        let playerHand2Value = getHandValue new_playerHand2 0
         putStrLn $ "\nSua mão 1:\n" ++ printHand new_playerHand1
         putStrLn $ "\nSua mão 2:\n" ++ printHand new_playerHand2
         let __deckShuffled = drop 5 deckShuffled
-        let dealerValue = getHandValue dealerHand
+        let dealerValue = getHandValue dealerHand 0
         let dealerHandAfter = buyDealerCards dealerHand __deckShuffled dealerValue
-        let dealerHandValue = getHandValue dealerHandAfter
+        let dealerHandValue = getHandValue dealerHandAfter 0
         putStrLn $ "\nMão do dealer:\n" ++ printHand dealerHandAfter
         money <- endsGame bet totalMoney new_playerHand1 __deckShuffled dealerHandAfter playerHand1Value dealerHandValue
         finalMoneySplit <- endsGame bet money new_playerHand2 __deckShuffled dealerHandAfter playerHand2Value dealerHandValue
@@ -149,7 +149,7 @@ inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dea
         if isMoneyEnough totalMoney new_bet
           then do
             let new_playerHand = head deckShuffled : playerHand
-            let new_playerHandValue = getHandValue new_playerHand
+            let new_playerHandValue = getHandValue new_playerHand 0
             let new_deckShuffled = drop 1 deckShuffled
             money <- endsGame new_bet totalMoney new_playerHand new_deckShuffled dealerHand new_playerHandValue dealerHandValue
             startGameMenu money
@@ -158,7 +158,7 @@ inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dea
             inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dealerHandValue False
       "2" -> do
         let new_playerHand = head deckShuffled : playerHand
-        let new_playerHandValue = getHandValue new_playerHand
+        let new_playerHandValue = getHandValue new_playerHand 0
         let new_deckShuffled = drop 1 deckShuffled
         inGameMenu bet totalMoney new_playerHand dealerHand new_deckShuffled new_playerHandValue dealerHandValue False
       "3" -> do
@@ -197,20 +197,20 @@ endsGame bet totalMoney playerHand deckShuffled dealerHand playerHandValue deale
     let new_money = totalMoney
     return new_money
   | otherwise = do
-    let dealerHandValueBeforeBuy = getHandValue dealerHand
+    let dealerHandValueBeforeBuy = getHandValue dealerHand 0
     let new_dealerHand = buyDealerCards dealerHand deckShuffled dealerHandValueBeforeBuy
-    let dealerHandValueAfterBuy = getHandValue new_dealerHand
+    let dealerHandValueAfterBuy = getHandValue new_dealerHand 0
     endsGame bet totalMoney playerHand deckShuffled new_dealerHand playerHandValue dealerHandValueAfterBuy
 
 handCicle :: [([Char], Char)] -> [Char] -> [([Char], Char)] -> IO [([Char], Char)]
 handCicle playerHand flag deckShuffled
   | flag == "2" = return playerHand
-  | getHandValue playerHand > 21 = do
+  | getHandValue playerHand 0 > 21 = do
     putStrLn $ "\nSua mão:\n" ++ printHand playerHand
     putStrLn "\nSua mão ESTOROU!!\n"
     return playerHand
   | otherwise = do
-    let palyerHandValue = getHandValue playerHand
+    let palyerHandValue = getHandValue playerHand 0
     putStrLn $ "\nSua mão:\n" ++ printHand playerHand
     putStrLn $ "\nValor da sua mão:\n" ++ show palyerHandValue
     putStrLn $ "\n----------------------------------------\n" ++ "Escolha sua acao: "
