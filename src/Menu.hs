@@ -32,6 +32,7 @@ startGameMenu money = do
   option <- getLine
   deckShuffled <- shuffle deck
   let playerHand = head deckShuffled : [deckShuffled !! 1]
+  -- Caso de SPLIT:
   -- let playerHand = ("Hearts", '2') : [("Clubs", '2')]
   let dealerHand = [deckShuffled !! 2]
   let _deckShuffled = drop 3 deckShuffled
@@ -124,11 +125,16 @@ inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dea
         inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dealerHandValue False
   | otherwise = do
     putStrLn $ "\nSua mão:\n" ++ printHand playerHand
-    putStrLn $ "Valor da sua mão: " ++ show playerHandValue
     putStrLn $ "\nMão do dealer:\n" ++ printHand dealerHand
+    putStrLn
+      ".------.\n\
+      \|      |\n\
+      \|      |\n\
+      \|      |\n\
+      \|      |\n\
+      \`------'\n"
+    putStrLn $ "Valor da sua mão: " ++ show playerHandValue
     putStrLn $ "Valor da mão do dealer: " ++ show dealerHandValue
-
-    -- inserir aqui função para printar carta do dealer virada.
 
     putStrLn $ "\n\nSeu dinheiro: $ " ++ show totalMoney
     putStrLn $ "\n----------------------------------------\n" ++ "Escolha sua acao: "
@@ -163,42 +169,29 @@ inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dea
 endsGame :: Int -> Int -> [([Char], Char)] -> [([Char], Char)] -> [([Char], Char)] -> Int -> Int -> IO Int
 endsGame bet totalMoney playerHand deckShuffled dealerHand playerHandValue dealerHandValue
   | playerHandValue > 21 = do
-    putStrLn $ "\nSua mão:\n" ++ printHand playerHand
-    putStrLn $ "Mão do dealer:\n" ++ printHand dealerHand
-    putStrLn $ "Valor da sua mão: " ++ show playerHandValue
+    printHands playerHand dealerHand playerHandValue dealerHandValue
     putStrLn "ESTOROU!!! \n"
     putStrLn "Dealer vence!\n"
     let new_money = totalMoney - bet
     return new_money
   | dealerHandValue > 21 = do
-    putStrLn $ "\nSua mão:\n" ++ printHand playerHand
-    putStrLn $ "Mão do dealer:\n" ++ printHand dealerHand
-    putStrLn $ "Valor da mão do dealer: " ++ show dealerHandValue
+    printHands playerHand dealerHand playerHandValue dealerHandValue
     putStrLn "DEALER ESTOROU! \n"
     putStrLn "Você vence!\n"
     let new_money = totalMoney + bet
     return new_money
   | length dealerHand >= 2 && dealerHandValue > playerHandValue = do
-    putStrLn $ "\nSua mão:\n" ++ printHand playerHand
-    putStrLn $ "Mão do dealer:\n" ++ printHand dealerHand
-    putStrLn $ "Valor da mão do dealer: " ++ show dealerHandValue
-    putStrLn $ "Valor da sua mão: " ++ show playerHandValue
+    printHands playerHand dealerHand playerHandValue dealerHandValue
     putStrLn "Dealer vence!\n"
     let new_money = totalMoney - bet
     return new_money
   | length dealerHand >= 2 && dealerHandValue < playerHandValue = do
-    putStrLn $ "\nSua mão:\n" ++ printHand playerHand
-    putStrLn $ "Mão do dealer:\n" ++ printHand dealerHand
-    putStrLn $ "Valor da mão do dealer: " ++ show dealerHandValue
-    putStrLn $ "Valor da sua mão: " ++ show playerHandValue
+    printHands playerHand dealerHand playerHandValue dealerHandValue
     putStrLn "Você vence!\n"
     let new_money = totalMoney + bet
     return new_money
   | length dealerHand >= 2 && dealerHandValue == playerHandValue = do
-    putStrLn $ "\nSua mão:\n" ++ printHand playerHand
-    putStrLn $ "Mão do dealer:\n" ++ printHand dealerHand
-    putStrLn $ "Valor da mão do dealer: " ++ show dealerHandValue
-    putStrLn $ "Valor da sua mão: " ++ show playerHandValue
+    printHands playerHand dealerHand playerHandValue dealerHandValue
     putStrLn "Vocês empataram\n"
     putStrLn "Push!"
     let new_money = totalMoney
