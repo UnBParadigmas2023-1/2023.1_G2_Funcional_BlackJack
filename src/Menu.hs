@@ -104,7 +104,8 @@ inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dea
     putStrLn $ "\n----------------------------------------\n" ++ "Escolha sua acao: "
     putStrLn "1 - Dobrar aposta"
     putStrLn "2 - Comprar carta"
-    putStrLn "3 - Fechar mao\n"
+    putStrLn "3 - Fechar mao"
+    putStrLn "4 - Abandonar\n"
     option <- getLine
 
     case option of
@@ -130,6 +131,10 @@ inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dea
       "3" -> do
         putStrLn "Fechando mao...\n"
         endsGame bet totalMoney playerHand deckShuffled dealerHand playerHandValue dealerHandValue
+      "4" -> do
+        putStrLn "Rodada abandonada\n"
+        let new_money = totalMoney - (bet `div` 2)
+        startGameMenu new_money
 
 endsGame :: Int -> Int -> [([Char], Char)] -> [([Char], Char)] -> [([Char], Char)] -> Int -> Int -> IO ()
 endsGame bet totalMoney playerHand deckShuffled dealerHand playerHandValue dealerHandValue
