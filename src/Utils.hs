@@ -1,6 +1,7 @@
 module Utils where
 
-import Data.Char
+import Cards
+import Data.Char ( digitToInt )
 
 --- Soma valor das cartas do deck
 --- hand -> Cartas sem contar a primeira
@@ -8,7 +9,7 @@ import Data.Char
 sumCards :: [([Char], Char)] -> Int
 sumCards (firstCard : hand)
   | handLength == 0 = getCardValue firstCard
-  | otherwise = (getCardValue firstCard) + sumCards hand
+  | otherwise = getCardValue firstCard + sumCards hand
   where
     handLength = length hand
 
@@ -71,3 +72,26 @@ getHandValue (h : t)
   | otherwise = digitToInt cardValue + getHandValue t
   where
     cardValue = snd h
+
+areCardsEqual :: ([Char], Char) -> ([Char], Char) -> Bool
+areCardsEqual firstCard secondCard
+  | firstCardValue == secondCardValue = True
+  | otherwise = False
+  where
+    firstCardValue = snd firstCard
+    secondCardValue = snd secondCard
+
+checkEqualCards :: [([Char], Char)] -> Bool
+checkEqualCards (lastCard : hand)
+  | comparison = True
+  | otherwise = False
+  where 
+    penultCard = last hand
+    comparison = areCardsEqual lastCard penultCard
+
+printHands :: [([Char], Char)] -> [([Char], Char)] -> Int -> Int -> IO ()
+printHands playerHand dealerHand playerHandValue dealerHandValue = do
+  putStrLn $ "\nSua mão:\n" ++ printHand playerHand
+  putStrLn $ "Mão do dealer:\n" ++ printHand dealerHand
+  putStrLn $ "Valor da sua mão: " ++ show playerHandValue
+  putStrLn $ "Valor da mão do dealer: " ++ show dealerHandValue

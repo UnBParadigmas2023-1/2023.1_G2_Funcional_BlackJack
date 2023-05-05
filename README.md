@@ -14,6 +14,7 @@
 | 19/0027088 | Eliás Yousef Santana Ali     |
 | 19/0044403 | Victor Souza Dantas Martins Lima |
 | 19/0033088 | Lucas Braun Vieira Xavier    |
+| 19/0025379 | Brenno Oliveira Silva        |
 
 ## Sobre
 
