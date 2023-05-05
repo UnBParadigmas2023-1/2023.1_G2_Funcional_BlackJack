@@ -53,7 +53,8 @@ Em seguida, instale a biblioteca random, que é uma dependência externa usada n
 stack install random
 ```
 
-Agora, para rodar, acesse a pasta src/, carregue o arquivo game.hs pelo ghci, e execute a função *main*:
+## Uso
+Para rodar, acesse a pasta src/, carregue o arquivo game.hs pelo ghci, e execute a função *main*:
 
 ```
 cd src/
@@ -62,18 +63,14 @@ Prelude> :l game.hs
 *Main> main
 ```
 
-## Uso
-
-Explique como usar seu projeto, caso haja algum passo a passo após o comando de execução.
-
-## Participações
+## Participações e lições aprendidas
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
 | Rafael Berto Pereira  | Essa matéria foi o meu primeiro contato com o paradigma funcional. A primeira impressão que ficou foi de estranhaza pois essa paradima é muito diferente dos utilizados em C/C++ e /java, por exemplo. Entretanto, após praticar um pouco os exemplos dados em sala eu não senti muita dificuldade de compreender o paradigma. No projeto eu contribui com a modularização do jogo e algumas funções. Atuei mais no módulo "Cards.hs" e na função "inGameMenu" do módulo "Menu.hs". | Excelente |
 | Lucas Pimentel Quintão| Neste projeto pude colocar em prática grande parte da teoria vista em sala durante as aulas da matéria. Consegui atuar em todas as partes do projeto desde a idealização, análise dos antigos repositórios com o mesmo tema e no desenvolvimento do jogo. Na parte de desenvolvimento atuei diretamente nas funções inGameMenu, startGameMenu, endsGame, desenvolvimento das novas features e em funções do módulo utils.hs. Acredito que a maior dificuldade foi a mudança na maneira de pensar o código que o paradigma funcional exige e as particularidades da linguagem Haskell| Excelente |
 | Victor Souza Dantas Martins Lima| O projeto inicialmente parecia algo simples até por ja existirem algumas implementações para tomar como base, porém, tivemos que repensar diversas coisas e ajustar alguns defeitos encontrados nas outras implementações além de acrescentar novas funcionalidades. Atuei bastante na parte do inGameMenu, endsGame e na função de split que particularmente achei a mais complexa. As maiores dificuldades foram se adptar as particularidades da linguagem, o uso de recursão e identificar em quais locais o código poderia ser reaproveitado e a forma como reaproveitá-lo. | Excelente |
-
+| Brenno Oliveira Silva | Minha contribuição para o projeto consistiu em auxiliar na criação das funções do Utils. As maiores dificuldades no projeto foram em estruturar funções sem utilizar estruturas semelhantes a objetos ou classes. | Boa |
 
 
 ## Vídeo
