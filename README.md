@@ -66,6 +66,12 @@ Prelude> :l game.hs
 
 Explique como usar seu projeto, caso haja algum passo a passo após o comando de execução.
 
+## Participações
+Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
+|Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
+| -- | -- | -- |
+| Rafael Berto Pereira  | Essa matéria foi o meu primeiro contato com o paradigma funcional. A primeira impressão que ficou foi de estranhaza pois essa paradima é muito diferente dos utilizados em C/C++ e /java, por exemplo. Entretanto, após praticar um pouco os exemplos dados em sala eu não senti muita dificuldade de compreender o paradigma. No projeto eu contribui com a modularização do jogo e algumas funções. Atuei mais no módulo "Cards.hs" e na função "inGameMenu" do módulo "Menu.hs". | Excelente |
+
 ## Vídeo
 
 Adicione 1 ou mais vídeos com a execução do projeto.
