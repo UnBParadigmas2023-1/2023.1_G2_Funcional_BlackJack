@@ -71,6 +71,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
 | Rafael Berto Pereira  | Essa matéria foi o meu primeiro contato com o paradigma funcional. A primeira impressão que ficou foi de estranhaza pois essa paradima é muito diferente dos utilizados em C/C++ e /java, por exemplo. Entretanto, após praticar um pouco os exemplos dados em sala eu não senti muita dificuldade de compreender o paradigma. No projeto eu contribui com a modularização do jogo e algumas funções. Atuei mais no módulo "Cards.hs" e na função "inGameMenu" do módulo "Menu.hs". | Excelente |
+| Lucas Pimentel Quintão| Neste projeto pude colocar em prática grande parte da teoria vista em sala durante as aulas da matéria. Consegui atuar em todas as partes do projeto desde a idealização, análise dos antigos repositórios com o mesmo tema e no desenvolvimento do jogo. Na parte de desenvolvimento atuei diretamente nas funções inGameMenu, startGameMenu, endsGame, desenvolvimento das novas features e em funções do módulo utils.hs. Acredito que a maior dificuldade foi a mudança na maneira de pensar o código que o paradigma funcional exige e as particularidades da linguagem Haskell| Excelente |
 
 ## Vídeo
 
