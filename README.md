@@ -6,15 +6,16 @@
 
 ## Alunos
 
-| Matrícula  | Aluno                        |
-| ---------- | ---------------------------- |
-| 19/0016663 | Lucas Pimentel Quintão       |
-| 18/0108344 | Rafael Berto Pereira         |
-| 20/0017519 | Eurico Menezes de Abreu Neto |
-| 19/0027088 | Eliás Yousef Santana Ali     |
+| Matrícula  | Aluno                            |
+| ---------- | -------------------------------- |
+| 19/0016663 | Lucas Pimentel Quintão           |
+| 18/0108344 | Rafael Berto Pereira             |
+| 20/0017519 | Eurico Menezes de Abreu Neto     |
+| 19/0027088 | Eliás Yousef Santana Ali         |
 | 19/0044403 | Victor Souza Dantas Martins Lima |
-| 19/0033088 | Lucas Braun Vieira Xavier    |
-| 19/0025379 | Brenno Oliveira Silva        |
+| 19/0033088 | Lucas Braun Vieira Xavier        |
+| 19/0025379 | Brenno Oliveira Silva            |
+| 19/0055201 | Matheus Calixto Vaz Pinheiro     |
 
 ## Sobre
 
