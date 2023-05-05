@@ -11,6 +11,7 @@
 | 19/0016663 | Lucas Pimentel Quintão       |
 | 18/0108344 | Rafael Berto Pereira         |
 | 20/0017519 | Eurico Menezes de Abreu Neto |
+| 19/0027088 | Eliás Yousef Santana Ali     |
 
 ## Sobre
 
