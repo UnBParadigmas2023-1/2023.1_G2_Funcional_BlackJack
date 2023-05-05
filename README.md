@@ -77,3 +77,4 @@ Quaisquer outras informações sobre seu projeto podem ser descritas a seguir.
 
 - [Como jogar Blackjack: regras e glossário de termos](https://blog.bodog.com/guia-basica-blackjack/)
 - [Função para embaralhar](https://wiki.haskell.org/Random_shuffle)
+- [Repositório BlackJack 2021](https://github.com/UnBParadigmas2021-2/2021.2_G5_Funcional_Blackjack)
