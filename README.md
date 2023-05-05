@@ -12,6 +12,7 @@
 | 18/0108344 | Rafael Berto Pereira         |
 | 20/0017519 | Eurico Menezes de Abreu Neto |
 | 19/0027088 | Eliás Yousef Santana Ali     |
+| 19/0044403 | Victor Souza Dantas Martins Lima |
 
 ## Sobre
 
