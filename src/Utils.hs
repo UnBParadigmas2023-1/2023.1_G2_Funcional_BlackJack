@@ -1,7 +1,9 @@
 module Utils where
 
 import Cards
-import Data.Char ( digitToInt )
+import Data.Char
+import Data.Char (digitToInt)
+import Data.List
 
 --- Soma valor das cartas do deck
 --- hand -> Cartas sem contar a primeira
@@ -73,6 +75,11 @@ getHandValue (h : t)
   where
     cardValue = snd h
 
+verifySplitPossibility :: [([Char], Char)] -> Bool
+verifySplitPossibility playerHand = length (nub values) < length playerHand
+  where
+    values = map snd playerHand
+
 areCardsEqual :: ([Char], Char) -> ([Char], Char) -> Bool
 areCardsEqual firstCard secondCard
   | firstCardValue == secondCardValue = True
@@ -85,7 +92,7 @@ checkEqualCards :: [([Char], Char)] -> Bool
 checkEqualCards (lastCard : hand)
   | comparison = True
   | otherwise = False
-  where 
+  where
     penultCard = last hand
     comparison = areCardsEqual lastCard penultCard
 
