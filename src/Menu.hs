@@ -89,9 +89,16 @@ inGameMenu :: Int -> Int -> [([Char], Char)] -> [([Char], Char)] -> [([Char], Ch
 inGameMenu bet totalMoney playerHand dealerHand deckShuffled playerHandValue dealerHandValue
   | playerHandValue > 21 = endsGame bet totalMoney playerHand deckShuffled dealerHand playerHandValue dealerHandValue
   | otherwise = do
-    printHands playerHand dealerHand playerHandValue dealerHandValue
-
-    -- inserir aqui função para printar carta do dealer virada.
+    putStrLn $ "\nSua mão:\n" ++ printHand playerHand
+    putStrLn $ "\nMão do dealer:\n" ++ printHand dealerHand
+    putStrLn ".------.\n\
+            \|      |\n\
+            \|      |\n\
+            \|      |\n\
+            \|      |\n\
+            \`------'\n"
+    putStrLn $ "Valor da sua mão: " ++ show playerHandValue
+    putStrLn $ "Valor da mão do dealer: " ++ show dealerHandValue
 
     putStrLn $ "\n\nSeu dinheiro: $ " ++ show totalMoney
     putStrLn $ "\n----------------------------------------\n" ++ "Escolha sua acao: "
