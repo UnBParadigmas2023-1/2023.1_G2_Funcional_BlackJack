@@ -16,6 +16,7 @@
 | 19/0033088 | Lucas Braun Vieira Xavier        |
 | 19/0025379 | Brenno Oliveira Silva            |
 | 19/0055201 | Matheus Calixto Vaz Pinheiro     |
+| 20/0019228 | Gustavo Martins Ribeiro          |
 
 ## Sobre
 
