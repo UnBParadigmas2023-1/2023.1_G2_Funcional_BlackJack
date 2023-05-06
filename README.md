@@ -54,7 +54,8 @@ stack install random
 ```
 
 ## Uso
-Para rodar, acesse a pasta src/, carregue o arquivo game.hs pelo ghci, e execute a função *main*:
+
+Para rodar, acesse a pasta src/, carregue o arquivo game.hs pelo ghci, e execute a função _main_:
 
 ```
 cd src/
@@ -64,16 +65,17 @@ Prelude> :l game.hs
 ```
 
 ## Participações e lições aprendidas
+
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
-| Rafael Berto Pereira  | Essa matéria foi o meu primeiro contato com o paradigma funcional. A primeira impressão que ficou foi de estranhaza pois essa paradima é muito diferente dos utilizados em C/C++ e /java, por exemplo. Entretanto, após praticar um pouco os exemplos dados em sala eu não senti muita dificuldade de compreender o paradigma. No projeto eu contribui com a modularização do jogo e algumas funções. Atuei mais no módulo "Cards.hs" e na função "inGameMenu" do módulo "Menu.hs". | Excelente |
+| Rafael Berto Pereira | Essa matéria foi o meu primeiro contato com o paradigma funcional. A primeira impressão que ficou foi de estranhaza pois essa paradima é muito diferente dos utilizados em C/C++ e /java, por exemplo. Entretanto, após praticar um pouco os exemplos dados em sala eu não senti muita dificuldade de compreender o paradigma. No projeto eu contribui com a modularização do jogo e algumas funções. Atuei mais no módulo "Cards.hs" e na função "inGameMenu" do módulo "Menu.hs". | Excelente |
 | Lucas Pimentel Quintão| Neste projeto pude colocar em prática grande parte da teoria vista em sala durante as aulas da matéria. Consegui atuar em todas as partes do projeto desde a idealização, análise dos antigos repositórios com o mesmo tema e no desenvolvimento do jogo. Na parte de desenvolvimento atuei diretamente nas funções inGameMenu, startGameMenu, endsGame, desenvolvimento das novas features e em funções do módulo utils.hs. Acredito que a maior dificuldade foi a mudança na maneira de pensar o código que o paradigma funcional exige e as particularidades da linguagem Haskell| Excelente |
 | Victor Souza Dantas Martins Lima| O projeto inicialmente parecia algo simples até por ja existirem algumas implementações para tomar como base, porém, tivemos que repensar diversas coisas e ajustar alguns defeitos encontrados nas outras implementações além de acrescentar novas funcionalidades. Atuei bastante na parte do inGameMenu, endsGame e na função de split que particularmente achei a mais complexa. As maiores dificuldades foram se adptar as particularidades da linguagem, o uso de recursão e identificar em quais locais o código poderia ser reaproveitado e a forma como reaproveitá-lo. | Excelente |
 | Brenno Oliveira Silva | Minha contribuição para o projeto consistiu em auxiliar na criação das funções do Utils. As maiores dificuldades no projeto foram em estruturar funções sem utilizar estruturas semelhantes a objetos ou classes. | Boa |
 | Eliás Yousef Santana Ali | Neste projeto colaborei com a lógica do split, juntamente com outros colegas em ligações via discord, além de desenvolver outras funções, como a verifySplitPossibility, e correção de bugs encontrados. As maiores dificuldades foram ligadas a sintaxe do haskell, pois quando era necessário fazer a releitura do código para verificar e testar a lógica escriva, acabava me perdendo facilmente. | Boa
 | Lucas Braun Vieira Xavier | Desde o começo das aulas me interessei no paradigma funcional, e com este projeto foi possível observar melhor ele em prática. A minha principal contribuição para o projeto foi a evolução de algumas das lógicas do jogo que não haviam sido implementadas ainda. A maior dificuldade que tive foi em ler e entender o código em Haskell feito por outras pessoas, por ser uma linguagem com a sintaxe muito diferente das que havia visto até então. | Boa
-
+| Eurico Menezes de Abreu Neto | Esse projeto foi o meu primeiro contato com o paradigma funcional e também o primeiro contato com a linguagem de programação Haskell. Tive bastante dificuldade no começo para entender como tudo funcionava mas fui pegando o jeito com o tempo. A parte que mais tive dificuldade foi tentar pensar sempre de forma recursiva e trazer a lógica da minha cabeça para a sintaxe do Haskell. Atuei em diversas etapas do projeto, em desenvolvimento de novas features, aprimoramento do README.md e organização do grupo. | Excelente
 
 ## Vídeo
 
