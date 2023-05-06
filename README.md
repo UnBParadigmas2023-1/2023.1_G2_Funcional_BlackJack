@@ -28,7 +28,11 @@ O projeto foi desenvolvido pelos estudantes da disciplina de Paradigmas de Progr
 
 ## Screenshots
 
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
+<img src="images/inicioJogo.png" width="600"/>
+
+<img src="images/cards.png" width="600"/>
+
+<img src="images/fimRodada.png" width="600"/>
 
 ## Instalação
 
@@ -81,7 +85,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 
 ## Vídeo
 
-Adicione 1 ou mais vídeos com a execução do projeto.
+[Apresentação](https://www.youtube.com/watch?v=Nn5oU0uTyyA)
 
 ## Outros
 
